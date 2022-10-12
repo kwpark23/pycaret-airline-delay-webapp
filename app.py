@@ -8,7 +8,7 @@ model = load_model('final_tuned_rf')
 
 def predict(model, input_df):
     predictions_df = predict_model(estimator=model, data=input_df)
-    predictions = predictions_df['Delay'][0]
+    predictions = predictions_df['Label'][0]
     return predictions
 
 def run():
@@ -38,13 +38,17 @@ def run():
         airportfrom = st.selectbox('Airport From', ['SFO','PHX','LAX','SFO','ANC','LAX','DEN','ONT','EWR','LIT','SAV','ECP','CHA'])
         airportto = st.selectbox('Airport To', ['SFO','PHX','LAX','SFO','ANC','LAX','DEN','ONT','EWR','LIT','SAV','ECP','CHA'])
         time = st.number_input('Time Departed', min_value=10, max_value=1440, value=10)
-        length = st.number_input('Length of Flight', min_value=10, max_value=600, value=25)
+        length = st.number_input('Length of Flight', min_value=10, max_value=600, value=10)
         
         output=""
 
         ids = random.randint(1, 100000)
+        hour = time//60
+        hourfull = float(time/60)
+        minutes = time - (hour * 60)
+        lengthhour = float(length/60)
 
-        input_dict = {'id':ids, 'Airline' : airline, 'Flight' : flight, 'AirportFrom' : airportfrom, 'AirportTo' : airportto, 'DayofWeek' : dayofweek,  'Time' : time, 'Length': length}
+        input_dict = {'id':ids, 'Airline' : airline, 'Flight' : flight, 'AirportFrom' : airportfrom, 'AirportTo' : airportto, 'DayOfWeek' : dayofweek,  'Time' : time, 'Length': length, 'Hour_full': hourfull , 'Hour': hour, 'Minutes': minutes, 'Length_hour': lengthhour}
         input_df = pd.DataFrame([input_dict])
 
         if st.button("Predict"):
