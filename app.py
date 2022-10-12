@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import random 
 
-model = load_model('final_tuned_rf')
+model = load_model('Final RF Model 11Oct2022.pkl')
 
 def predict(model, input_df):
     predictions_df = predict_model(estimator=model, data=input_df)
