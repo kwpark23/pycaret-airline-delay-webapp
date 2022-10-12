@@ -32,12 +32,12 @@ def run():
 
     if add_selectbox == 'Online':
         
-        flight = st.number_input('Flight', min_value=10, max_value=2000, value=25)
+        flight = st.number_input('Flight', min_value=10, max_value=2000, value=10)
         airline = st.selectbox('Airline', ['CO', 'US', 'AA','AS','DL','WN','OO','DL','EV','XE','OH'])
         dayofweek = st.number_input('Day of Week', min_value=1, max_value=7, value=1)
         airportfrom = st.selectbox('Airport From', ['SFO','PHX','LAX','SFO','ANC','LAX','DEN','ONT','EWR','LIT','SAV','ECP','CHA'])
         airportto = st.selectbox('Airport To', ['SFO','PHX','LAX','SFO','ANC','LAX','DEN','ONT','EWR','LIT','SAV','ECP','CHA'])
-        time = st.number_input('Time Departed', min_value=10, max_value=1440, value=1)
+        time = st.number_input('Time Departed', min_value=10, max_value=1440, value=10)
         length = st.number_input('Length of Flight', min_value=10, max_value=600, value=25)
         
         output=""
