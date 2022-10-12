@@ -53,9 +53,11 @@ def run():
 
         if st.button("Predict"):
             output = predict(model=model, input_df=input_df)
-            output = '$' + str(output)
+            if output == 1:
+               st.success('The flight will get Delayed')
+            elif output == 0:
+               st.success('The flight will not get Delayed')
 
-        st.success('The output is {}'.format(output))
 
     if add_selectbox == 'Batch':
 
