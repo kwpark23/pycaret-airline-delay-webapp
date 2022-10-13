@@ -26,9 +26,6 @@ def run():
     "How would you like to predict?",
     ("Online", "Batch"))
 
-    st.sidebar.info('This app is created to predict airline delay')
-    st.sidebar.success('https://www.pycaret.org')
-    
     st.sidebar.image(american)
     st.sidebar.image(southwest)
     st.sidebar.image(delta)
