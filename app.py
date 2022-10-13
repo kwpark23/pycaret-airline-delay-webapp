@@ -14,10 +14,13 @@ def predict(model, input_df):
 def run():
 
     from PIL import Image
-    image = Image.open('logo.png')
-    image_hospital = Image.open('airplane.jpg')
+    airport = Image.open('airport.jpg')
+    american = Image.open('american.png')
+    southwest = Image.open('southwest.png')
+    delta = Image.open('delta.png')
 
-    st.image(image,use_column_width=False)
+
+    st.image(airport,use_column_width=False)
 
     add_selectbox = st.sidebar.selectbox(
     "How would you like to predict?",
@@ -26,8 +29,9 @@ def run():
     st.sidebar.info('This app is created to predict airline delay')
     st.sidebar.success('https://www.pycaret.org')
     
-    st.sidebar.image(image_hospital)
-
+    st.sidebar.image(american)
+    st.sidebar.image(southwest)
+    st.sidebar.image(delta)
     st.title("Airline Delay Prediction App")
 
     if add_selectbox == 'Online':
