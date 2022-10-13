@@ -18,6 +18,8 @@ def run():
     american = Image.open('american.png')
     southwest = Image.open('southwest.png')
     delta = Image.open('delta.png')
+    express = Image.open('express.png')
+    alaska = Image.open('alaska.png')
 
 
     st.image(airport,use_column_width=False)
@@ -29,6 +31,8 @@ def run():
     st.sidebar.image(american)
     st.sidebar.image(southwest)
     st.sidebar.image(delta)
+    st.sidebar.image(express)
+    st.sidebar.image(alaska)
     st.title("Airline Delay Prediction App")
 
     if add_selectbox == 'Online':
