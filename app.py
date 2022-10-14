@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import random 
 
-model = load_model('Final RF Model 11Oct2022')
+model = load_model('Final RF Model 14Oct2022')
 
 def predict(model, input_df):
     predictions_df = predict_model(estimator=model, data=input_df)
@@ -69,14 +69,12 @@ def run():
         st.text('For example, if the flight lasted for 3 hours, your input should be 180 (3 x 60 minutes)')
 
         output=""
-
-        ids = random.randint(1, 100000)
         hour = time//60
         hourfull = float(time/60)
         minutes = time - (hour * 60)
         lengthhour = float(length/60)
 
-        input_dict = {'id':ids, 'Airline' : airline, 'Flight' : flight, 'AirportFrom' : airportfrom, 'AirportTo' : airportto, 'DayOfWeek' : dayofweek,  'Time' : time, 'Length': length, 'Hour_full': hourfull , 'Hour': hour, 'Minutes': minutes, 'Length_hour': lengthhour}
+        input_dict = {'Airline' : airline, 'Flight' : flight, 'AirportFrom' : airportfrom, 'AirportTo' : airportto, 'DayOfWeek' : dayofweek,  'Time' : time, 'Length': length, 'Hour_full': hourfull , 'Hour': hour, 'Minutes': minutes, 'Length_hour': lengthhour}
         input_df = pd.DataFrame([input_dict])
 
         if st.button("Predict"):
