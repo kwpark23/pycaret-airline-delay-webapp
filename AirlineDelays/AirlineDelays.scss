@@ -1,0 +1,56 @@
+@import '../../App.scss';
+
+.AirlineDelays{
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    overflow: hidden;
+
+    .toolbar{
+        background: white;
+        padding: 2em; 
+        color: black;
+        margin: 3em;
+        position:fixed;
+        top: 0; 
+        left: 0; 
+        max-width: 350px;
+        border-radius: 2em;
+        box-shadow: 0px 0px 20px 2px #0000002e; 
+        z-index: 10;
+
+        .departure, .departuretime , .arrival, .arrivaltime{
+            margin-bottom: 20px;
+        }
+
+        .airlines {
+            margin-bottom: 20px;
+        }
+
+        .flight#title {
+            font: roboto; 
+        }
+
+        .predictBtn{
+            border: 1px solid $accent;
+            color: $accent;
+            padding: 0.8em 2.2em;
+            border-radius: 0.4em;
+            font-weight: bold;
+            font-size: 1em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            text-decoration: none;
+            cursor: pointer;
+            outline: 0;   
+        }
+
+    }
+   
+    .takeoff, .landing {
+        width: 8em;
+    }
+
+
+}
+
