@@ -1,0 +1,98 @@
+@import '../../App.scss';
+
+.Home{
+    .Big-Heading{
+        font-size: 4em;
+        margin: 0;
+    }
+
+    h1{
+        position: relative;
+        max-width: 15em;
+
+        .glitch1 {
+            color: #f0f;
+            z-index: -2;
+            -webkit-animation: glitch1 10s cubic-bezier(.25,.46,.45,.94) infinite both;
+            animation: glitch1 10s cubic-bezier(.25,.46,.45,.94) infinite both;
+        }
+        .glitch2 {
+            color: $accent;
+            z-index: -1;
+            -webkit-animation: glitch2 10s cubic-bezier(.94,.45,.46,.25) infinite both;
+            animation: glitch2 10s cubic-bezier(.94,.45,.46,.25) infinite both;
+        }
+        .glitch1, .glitch2 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: .8;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        @keyframes glitch1 {
+            0% {
+                -webkit-transform: translate(0);
+                transform: translate(0)
+            }
+            2% {
+                -webkit-transform: translate(-3px, 3px);
+                transform: translate(-3px, 3px)
+            }
+            4% {
+                -webkit-transform: translate(-3px, -3px);
+                transform: translate(-3px, -3px)
+            }
+            6% {
+                -webkit-transform: translate(3px, 3px);
+                transform: translate(3px, 3px)
+            }
+            8% {
+                -webkit-transform: translate(3px, -3px);
+                transform: translate(3px, -3px)
+            }
+            10% {
+                -webkit-transform: translate(0);
+                transform: translate(0)
+            }
+        }
+
+        @keyframes glitch2 {
+          0% {
+              -webkit-transform: translate(0);
+              transform: translate(0)
+          }
+          2% {
+              -webkit-transform: translate(3px, -3px);
+              transform: translate(3px, -3px)
+          }
+          4% {
+              -webkit-transform: translate(3px, 3px);
+              transform: translate(3px, 3px)
+          }
+          6% {
+              -webkit-transform: translate(-3px, -3px);
+              transform: translate(-3px, -3px)
+          }
+          8% {
+              -webkit-transform: translate(-3px, 3px);
+              transform: translate(-3px, 3px)
+          }
+          10% {
+              -webkit-transform: translate(0);
+              transform: translate(0)
+          }
+        }
+    }
+
+    h2{
+        color: $accent;
+        margin: 0;
+    }
+
+    h3{
+        opacity: .7;
+        margin: 1em 0; 
+    }
+}

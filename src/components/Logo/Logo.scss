@@ -1,0 +1,17 @@
+@import '../../App.scss';
+
+.Logo{
+    a{
+        font-size: 2em;
+        width: 2.2em;
+        height: 2.2em;
+        border: 0.2em solid $accent;
+        color: $accent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        user-select: none;
+        text-decoration: none;
+    }
+  }
